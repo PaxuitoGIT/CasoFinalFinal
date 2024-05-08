@@ -43,4 +43,9 @@ public class Tweet {
     public void setTime(LocalDate time) {
         this.time = time;
     }
+
+    @Override
+    public String toString() {
+        return "Tweet: " + mensaje + " (Enviado por: " + autor.getAlias() + " el " + time + ")";
+    }
 }

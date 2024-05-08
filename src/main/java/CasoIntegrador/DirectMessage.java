@@ -15,4 +15,9 @@ public class DirectMessage extends Tweet {
     public void setReceptor(UserAccount receptor) {
         this.receptor = receptor;
     }
+
+    @Override
+    public String toString() {
+        return "Mensaje Directo: " + mensaje + " (Enviado por: " + autor.getAlias() + " a " + receptor.getAlias() + ")";
+    }
 }

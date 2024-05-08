@@ -15,4 +15,9 @@ public class Retweet extends Tweet{
     public void setTweetOriginal(Tweet tweetOriginal) {
         this.tweetOriginal = tweetOriginal;
     }
+
+    @Override
+    public String toString() {
+        return "Retweet: " + mensaje + " (Original: " + tweetOriginal.toString() + ")";
+    }
 }
