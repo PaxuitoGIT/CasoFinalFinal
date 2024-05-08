@@ -5,6 +5,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Main {
     private static ArrayList<UserAccount> userList;
@@ -13,6 +15,31 @@ public class Main {
         // Cargar lista de usuarios desde un archivo al iniciar el programa
         userList = cargarUsuariosDesdeArchivo("usuarios.txt");
 
+        boolean salir = false;
+        while (!salir) {
+            System.out.println("1. Cargar usuario en memoria");
+            System.out.println("2. Publicar tweet");
+            System.out.println("3. Ordenar usuarios por email ascendente");
+            System.out.println("4. Salir");
+            int opcion = Utils.leerEntero("Seleccione una opción: ");
+            switch (opcion) {
+                case 1:
+                    cargarUsuarioEnMemoria();
+                    break;
+                case 2:
+                    publicarTweet();
+                    break;
+                case 3:
+                    ordenarUsuariosPorEmail();
+                    break;
+                case 4:
+                    salir = true;
+                    break;
+                default:
+                    System.out.println("Opción inválida.");
+                    break;
+            }
+        }
 
     }
 
@@ -74,6 +101,15 @@ public class Main {
             System.out.println("Tweet publicado correctamente.");
         } catch (IllegalArgumentException e) {
             System.out.println("Error al publicar el tweet: " + e.getMessage());
+        }
+    }
+
+    // Función para ordenar los usuarios por email de forma ascendente
+    private static void ordenarUsuariosPorEmail() {
+        Collections.sort(userList, Comparator.comparing(UserAccount::getEmail));
+        System.out.println("Usuarios ordenados por email (ascendente):");
+        for (UserAccount user : userList) {
+            System.out.println(user);
         }
     }
 }
