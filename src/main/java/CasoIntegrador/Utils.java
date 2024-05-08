@@ -21,6 +21,17 @@ public class Utils {
         return numero;
     }
 
+    public static float leerFloat(String mensaje) {
+        System.out.print(mensaje);
+        while (!scanner.hasNextFloat()) {
+            System.out.print("Ingrese un número válido: ");
+            scanner.next();
+        }
+        float numero = scanner.nextFloat();
+        scanner.nextLine(); // Consumir el salto de línea
+        return numero;
+    }
+
     public static boolean isValidAlias(String alias) {
         return alias.matches("[a-zA-Z0-9]+");
     }
