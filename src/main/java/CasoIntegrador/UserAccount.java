@@ -3,8 +3,10 @@ package CasoIntegrador;
 import java.util.ArrayList;
 
 public class UserAccount {
+    // Para el alias y el email he usado el tipo String, ya que son cadenas de texto.
     private String alias;
     private String email;
+    // Para los tweets, seguidores y seguidos he usado el tipo ArrayList, ya que son colecciones de objetos.
     private ArrayList<Tweet> tweets;
     private ArrayList<UserAccount> seguidores;
     private ArrayList<UserAccount> seguidos;

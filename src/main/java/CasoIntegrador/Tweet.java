@@ -1,7 +1,9 @@
 package CasoIntegrador;
 
 public class Tweet {
+    // Para el mensaje he usado el tipo String, ya que es una cadena de texto.
     private String message;
+    // Para el autor he usado el tipo UserAccount, ya que es un objeto.
     private UserAccount autor;
 
     public Tweet(String message, UserAccount autor) {
