@@ -50,6 +50,18 @@ public class UserAccount {
         notifyFollowers(tweet);
     }
 
+    // Método auxiliar para notificar a los seguidores de un tweet
+    private void notifyFollowers(Tweet tweet) {
+        for (UserAccount follower : seguidores) {
+            follower.addToTimeLine(tweet);
+        }
+    }
+
+    // Método auxiliar para añadir un tweet a la línea temporal de un usuario
+    private void addToTimeLine(Tweet tweet) {
+        tweets.add(tweet);
+    }
+
     // Getters y setters
     public String getAlias() {
         return alias;
