@@ -25,4 +25,45 @@ public class UserAccount {
         this.seguidores = new ArrayList<>();
         this.seguidos = new ArrayList<>();
     }
+
+    // Getters y setters
+    public String getAlias() {
+        return alias;
+    }
+
+    public void setAlias(String alias) {
+        this.alias = alias;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public ArrayList<Tweet> getTweets() {
+        return tweets;
+    }
+
+    public void setTweets(ArrayList<Tweet> tweets) {
+        this.tweets = tweets;
+    }
+
+    public ArrayList<UserAccount> getSeguidores() {
+        return seguidores;
+    }
+
+    public void setSeguidores(ArrayList<UserAccount> seguidores) {
+        this.seguidores = seguidores;
+    }
+
+    public ArrayList<UserAccount> getSeguidos() {
+        return seguidos;
+    }
+
+    public void setSeguidos(ArrayList<UserAccount> seguidos) {
+        this.seguidos = seguidos;
+    }
 }
