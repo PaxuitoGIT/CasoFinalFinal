@@ -160,3 +160,5 @@ public void tweet(Tweet tweet) {
 
 }
 ```
+### Notación
+Para conseguir los usuarios y ver su correo y su usuario están en el archivo usuarios.txt en el directorio del proyecto
