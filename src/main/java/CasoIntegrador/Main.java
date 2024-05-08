@@ -13,6 +13,7 @@ public class Main {
         // Cargar lista de usuarios desde un archivo al iniciar el programa
         userList = cargarUsuariosDesdeArchivo("usuarios.txt");
 
+
     }
 
     // Método para cargar usuarios desde un archivo y almacenarlos en una lista
@@ -37,5 +38,16 @@ public class Main {
             System.err.println("Error al leer el archivo: " + e.getMessage());
         }
         return usuarios;
+    }
+
+    // Función para cargar un usuario en memoria mediante búsqueda secuencial
+    private static void cargarUsuarioEnMemoria() {
+        String alias = Utils.leerCadena("Ingrese el alias del usuario a cargar: ");
+        UserAccount usuario = buscarUsuarioPorAlias(alias);
+        if (usuario != null) {
+            System.out.println("Usuario cargado en memoria: " + usuario);
+        } else {
+            System.out.println("El usuario no se encontró en la lista.");
+        }
     }
 }
