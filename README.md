@@ -71,7 +71,7 @@ Para solucionar esto, podemos manejar el caso añadiendo otra condición tal que
 El código repite de forma recursiva la multiplicación de a * b hasta que b sea 0 para que al final sea un a * 1 (cumplir la condición). Cuando a llegue a 0, se cumple la condición de que retorne 0 y habíamos añadido que si b es negativo, que retorne 1.
 Es decir, en cuando se cumplen todas esas condiciones, la recursividad para, y si no se cumplen las condiciones la recursividad seguirá hasta cumplirlas. Es una recursividad lineal descendente
 
-### Ejercicio 4
+## Ejercicio 4
 
 Si nos basamos un poco en el ejercicio anterior, el código sería de la siguiente forma:
 public class Main {
