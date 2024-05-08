@@ -26,6 +26,24 @@ public class UserAccount {
         this.seguidos = new ArrayList<>();
     }
 
+    // Método para que un usuario pueda seguir a otro
+    public void follow(UserAccount userToFollow) {
+        if (this == userToFollow) {
+            throw new IllegalArgumentException("No puedes seguirte a ti mismo.");
+        }
+        if (seguidores.contains(userToFollow)) {
+            System.out.println("Ya estás siguiendo a este usuario.");
+        } else {
+            seguidores.add(userToFollow);
+            userToFollow.addFollower(this);
+        }
+    }
+
+    // Método auxiliar para añadir un seguidor a la lista de seguidos
+    private void addFollower(UserAccount follower) {
+        seguidores.add(follower);
+    }
+
     // Getters y setters
     public String getAlias() {
         return alias;
