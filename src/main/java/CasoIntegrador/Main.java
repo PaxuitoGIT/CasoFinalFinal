@@ -41,7 +41,7 @@ public class Main {
     }
 
     // Función para cargar un usuario en memoria mediante búsqueda secuencial
-    private static void cargarUsuarioEnMemoria() {
+    private static UserAccount cargarUsuarioEnMemoria() {
         String alias = Utils.leerCadena("Ingrese el alias del usuario a cargar: ");
         UserAccount usuario = buscarUsuarioPorAlias(alias);
         if (usuario != null) {
@@ -49,6 +49,7 @@ public class Main {
         } else {
             System.out.println("El usuario no se encontró en la lista.");
         }
+        return usuario;
     }
 
     // Función para buscar un usuario por alias
@@ -59,5 +60,20 @@ public class Main {
             }
         }
         return null;
+    }
+
+    // Función para publicar un tweet por el usuario cargado en memoria
+    private static void publicarTweet() {
+        UserAccount usuario = cargarUsuarioEnMemoria();
+        String mensaje = Utils.leerCadena("Ingrese el mensaje del tweet: ");
+        try {
+            if (mensaje.length() > 140) {
+                throw new IllegalArgumentException("El tweet no puede exceder los 140 caracteres.");
+            }
+            usuario.tweet(new Tweet(mensaje, usuario));
+            System.out.println("Tweet publicado correctamente.");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error al publicar el tweet: " + e.getMessage());
+        }
     }
 }
