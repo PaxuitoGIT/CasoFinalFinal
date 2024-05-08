@@ -74,24 +74,43 @@ Es decir, en cuando se cumplen todas esas condiciones, la recursividad para, y s
 ## Ejercicio 4
 
 Si nos basamos un poco en el ejercicio anterior, el código sería de la siguiente forma:
+
 public class Main {
+
     public static void main(String[] args) {
+    
         int numero = 102;
+        
         int sumaDigitos = sumarDigitos(numero);
+        
         System.out.println("La suma de los dígitos de " + numero + " es: " + sumaDigitos);
+        
     }
+    
      public static int sumarDigitos(int numero) {
+     
         if (numero == 0) {
+        
             return 0;
+            
         } else {
+        
             // Obtenemos el último dígito del número y lo sumamos al resultado ya que queremos hallar el resto de 102 % 10 que es 2
+            
             int ultimoDigito = numero % 10;
+            
             // Dividimos el número por 10 para eliminar el último dígito para que en la recursividad se haga 102 / 10 y luego 10 / 10 sea 1 
+            
             int numeroSinUltimoDigito = numero / 10;
+            
             // Llamamos recursivamente a la función con el número sin el último dígito y se haría 2 + 1 = 3
+            
             return ultimoDigito + sumarDigitos(numeroSinUltimoDigito);
+            
         }
+        
     }
+    
 }
 
 Es una recursividad descendente ya que estamos llamando a la función hasta que sea igual a 0 y tiene una complejidad logarítmica de O(log n)
