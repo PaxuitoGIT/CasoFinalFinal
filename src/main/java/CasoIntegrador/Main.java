@@ -50,4 +50,14 @@ public class Main {
             System.out.println("El usuario no se encontró en la lista.");
         }
     }
+
+    // Función para buscar un usuario por alias
+    private static UserAccount buscarUsuarioPorAlias(String alias) {
+        for (UserAccount user : userList) {
+            if (user.getAlias().equals(alias)) {
+                return user;
+            }
+        }
+        return null;
+    }
 }
