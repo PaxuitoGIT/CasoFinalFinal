@@ -102,4 +102,9 @@ public class UserAccount {
     public void setSeguidos(ArrayList<UserAccount> seguidos) {
         this.seguidos = seguidos;
     }
+
+    @Override
+    public String toString() {
+        return "Usuario: " + alias + ", Correo electrónico: " + email;
+    }
 }
