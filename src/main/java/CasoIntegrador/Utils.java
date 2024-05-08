@@ -10,6 +10,17 @@ public class Utils {
         return scanner.nextLine();
     }
 
+    public static int leerEntero(String mensaje) {
+        System.out.print(mensaje);
+        while (!scanner.hasNextInt()) {
+            System.out.print("Ingrese un número válido: ");
+            scanner.next();
+        }
+        int numero = scanner.nextInt();
+        scanner.nextLine(); // Consumir el salto de línea
+        return numero;
+    }
+
     public static boolean isValidAlias(String alias) {
         return alias.matches("[a-zA-Z0-9]+");
     }
