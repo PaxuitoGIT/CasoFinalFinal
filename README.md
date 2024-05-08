@@ -134,3 +134,29 @@ public ArrayList<Retweet> getTweets() {
         
     }
 ```
+
+### ¿Deberá modificar el método tweet(Tweet tweet1) de la clase UserAccount (definida en el ejercicio 1) para que pueda enviar también objetos de tipo Retweet? Justifique su razonamiento y, si cree que hay que modificarlo, explique también cómo lo haría.
+
+Sí, también es recomendale ya que los retweets son esencialmente un tipo especial de tweet, por lo que tendríamos que permitir que el método tweet acepte tantos objetos de tipo Tweet como de su subclase Retweet.
+Para modificarlo, basta con modificar el método para publicar un tweet tal que: 
+```
+public void tweet(Tweet tweet) {
+
+    if (tweet instanceof Retweet) {
+
+        // Si es un retweet, simplemente agrégalo a la lista de tweets
+
+        tweets.add((Retweet) tweet);
+
+    } else {
+
+        // Si es un tweet normal, agrégalo a la lista de tweets como antes
+
+        tweets.add(tweet);
+
+    }
+
+    notifyFollowers(tweet);
+
+}
+```
