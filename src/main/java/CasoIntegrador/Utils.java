@@ -32,6 +32,17 @@ public class Utils {
         return numero;
     }
 
+    public static double leerDouble(String mensaje) {
+        System.out.print(mensaje);
+        while (!scanner.hasNextDouble()) {
+            System.out.print("Ingrese un número válido: ");
+            scanner.next();
+        }
+        double numero = scanner.nextDouble();
+        scanner.nextLine(); // Consumir el salto de línea
+        return numero;
+    }
+
     public static boolean isValidAlias(String alias) {
         return alias.matches("[a-zA-Z0-9]+");
     }
