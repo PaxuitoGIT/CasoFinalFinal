@@ -74,7 +74,7 @@ Es decir, en cuando se cumplen todas esas condiciones, la recursividad para, y s
 ## Ejercicio 4
 
 Si nos basamos un poco en el ejercicio anterior, el código sería de la siguiente forma:
-
+```
 public class Main {
 
     public static void main(String[] args) {
@@ -112,6 +112,25 @@ public class Main {
     }
     
 }
-
+```
 Es una recursividad descendente ya que estamos llamando a la función hasta que sea igual a 0 y tiene una complejidad logarítmica de O(log n)
 
+## Ejercicio 5
+
+### d) Responda a las siguiente preguntas:
+
+### ¿Deberá modificar los atributos timeline y tweets de la clase UserAccount (definida en el ejercicio 1) para que contenga elementos de la clase hija Retweet? Justifique su razonamiento y, si cree que hay que modificarlos, explique también cómo lo haría.
+
+Sí, es recomendable modificar ya que los retweets son esenciales para compartir publicaciones existentes. Si queremos ver todas las cosas que un usuario ha compartido en la red social, necesitamos que su lista de tweets también pueda incluir los retweets que haya hecho. Para hacerlo, habría que cambiar el getter y el setter de ArrayList<Tweet> por retweet tal que: 
+```
+public ArrayList<Retweet> getTweets() {
+
+        return tweets;
+    }
+
+    public void setTweets(ArrayList<Retweet> tweets) {
+    
+        this.tweets = tweets;
+        
+    }
+```
