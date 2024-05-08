@@ -44,6 +44,12 @@ public class UserAccount {
         seguidores.add(follower);
     }
 
+    // Método para publicar un tweet
+    public void tweet (Tweet tweet) {
+        tweets.add(tweet);
+        notifyFollowers(tweet);
+    }
+
     // Getters y setters
     public String getAlias() {
         return alias;
